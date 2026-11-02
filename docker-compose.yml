@@ -31,7 +31,7 @@ services:
       - ./api-explorer-rails:/app
     env_file:
       - ./api-explorer-rails/.env
-    command: rails s -b 0.0.0.0 -p 3004
+    command: sh -c "rm -f tmp/pids/server.pid && exec rails s -b 0.0.0.0 -p 3004"
 
   django:
     build: ./api-explorer-django
